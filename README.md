@@ -17,10 +17,15 @@ node api/noteServer.js
 
 ###Some Tests using curl:
 curl -i -H "Accept: application/json" -X GET http://localhost/api/notes
+
 curl -i -H "Accept: application/json" -X GET http://localhost/api/notes?query=milk
+
 curl -i -H "Accept: application/json" -X GET http://localhost/api/notes/2
+
 curl -i -H "Accept: application/json" -X GET http://localhost/api/notes/99 (Returns a 404)
+
 curl -i -H "Accept: application/json" -X POST -d '{"body" : "Pick up milk!"}' http://localhost/api/notes
+
 
 ##Front-End Angular GitHub Issues Web page
 
