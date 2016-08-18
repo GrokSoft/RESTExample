@@ -1,0 +1,100 @@
+/*
+ * Copyright (c) 2016 GrokSoft LLC - All Rights Reserved
+ */
+body {
+    background-image: url("../images/paperBG.jpg");
+}
+
+a, a:hover, a:visited, a:active {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button {
+    min-height: 44px;
+}
+
+.menu {
+    border: groove;
+    padding: 20px 20px 0px 20px;
+    vertical-align: middle;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+.issue-header {
+    background-image: url("../images/paperBG2.jpg");
+}
+
+.issue-title {
+    font-weight: bold;
+    font-size: x-large;
+    border: outset;
+    padding: 4px 10px 4px 10px;
+    background-image: url("../images/paperBG3.jpg");
+    min-height: 3.3em;
+}
+
+.issue-body {
+    padding: 10px;
+    background-image: url("../images/paperBG1.jpg");
+}
+
+.iconBtn {
+    border-radius: 20px;
+}
+
+.col-switcher {
+    margin-bottom: 10px;
+}
+
+.locked, .unlocked, .paper-clip, .github {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: no-repeat top left;
+    background-size: 32px 32px;
+    margin: 10px 10px 0 0;
+    vertical-align: middle;
+}
+
+.locked {
+    background-image: url("../images/lock.png");
+}
+
+.unlocked {
+    background-image: url("../images/unlock.png");
+}
+
+.paper-clip {
+    background-image: url("../images/paperclip-icon.png");
+}
+
+.github {
+    background-image: url("../images/github32.png");
+}
+
+.accordion-body {
+    padding-top: 10px;
+}
+
+.collapse, .collapse:hover {
+    transition: all 2.22s ease-in-out;
+    text-decoration: none;
+}
+
+.grow {
+    transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.2);
+}
+
+.grow-box-shadow {
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.6);
+    /*transition: box-shadow 0.3s ease-in-out;*/
+}
+
+.grow-box-shadow:hover {
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,44 @@
+<!-- Copyright 2016 GrokSoft LLC All Rights Reserved -->
+
+<div ng-init="setIssue(issue)">
+    <h3 class="issue-header">
+        <span ng-class="{'locked' : issue.locked, 'unlocked' : !issue.locked }"
+                title="The issue is {{issue.locked?'locked':'unlocked'}}."></span>
+        <span>Issue# {{issue.number}}</span>
+        
+        <span class="pull-right">
+            <span><b>State:</b> {{issue.state}}</span>
+            <a href="{{issue.html_url}}">
+                <span class="github grow grow-box-shadow"
+                        title="View the issue on GetHub"></span>
+            </a>
+        </span>
+    </h3>
+    
+    <div class="issue-title bordered text-left">
+        
+        <!-- ToDo: This has an artifact when expanding since I added Markdown.
+            <span class="col-sm-1"><a class="accordion-toggle"
+                href="#issueBody{{issue.number}}"
+                data-toggle="collapse">
+            <span class="glyphicon glyphicon-chevron-up"
+                    title="Click to expand this issue"></span>
+        </a></span>-->
+        <span class="col-sm-12">{{issue.title}}</span>
+    </div>
+    
+    <div class="text-center">
+        <span class="pull-left"><b>User:</b> {{issueCtrl.getUser()}}</span>
+        <span class="pull-right"><b>Assignee:</b> {{issueCtrl.getAssignee()}}
+        </span>
+    </div>
+    
+    
+    <div id="issueBody{{issue.number}}"
+            class="collapse in">
+        <br>
+        <div class="issue-body accordion-body"
+                data-toggle="collapse"
+                markdown="getBody()"></div>
+    </div>
+</div>

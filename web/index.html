@@ -1,0 +1,68 @@
+<!DOCTYPE html><!-- Copyright 2016 GrokSoft LLC All Rights Reserved -->
+<html ng-app="ngIssues"
+        lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+    <meta name="viewport"
+            content="width=device-width, initial-scale=1">
+    <meta name="description"
+            content="Bill Gray's Angular Issues page">
+    <meta name="author"
+            content="Bill Gray">
+    <title>Angular Issues</title>
+    
+    <link href="css/bootstrap.min.css"
+            rel="stylesheet">
+    <link href="css/issues.css"
+            rel="stylesheet">
+    
+    <script src="js/angular.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/showdown.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-controller="NgIssuesController as issuesCtrl">
+<header>
+    <h1 class="text-center">Welcome to Angular GitHub Issues</h1>
+    <h2 class="text-center">Issues since
+        <span>{{issuesCtrl.getDate()}}</span>
+        are being displayed
+    </h2>
+</header>
+<div class="text-center menu">
+    <span class="pull-left">
+        <button ng-click="issuesCtrl.toggleAllCollapse();">
+            <span id="chevron"
+                    class="glyphicon glyphicon-chevron-up"
+                    style="font-size: x-large"></span>
+            <span style="font-size: x-large">Click to Toggle Collapse of all issues</span>
+        </button>
+    </span>
+    <img src="images/spacer.png"
+            height="55px"/>
+    <span class="pull-right">
+        <button class="hidden-md hidden-sm hidden-xs"
+                ng-click="issuesCtrl.toggleSingleRow();">
+            <span style="font-size: x-large">Click to Toggle single Row</span>
+            <img class="col-switcher img-rounded"
+                    src="images/col-2.png"
+                    alt="Column Toggle"
+                    onclick="toggleSingleRow();"
+                    height="24"/>
+        </button>
+    </span>
+</div>
+<hr>
+<!-- Issues container -->
+<div class="container-fluid">
+    <issue class="col-lg-6"
+            ng-repeat="issue in issuesCtrl.issues"></issue>
+</div>
+
+
+</body>
+</html>
