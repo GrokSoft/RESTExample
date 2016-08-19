@@ -10,7 +10,7 @@
 
 ###Configuration:
 By default the note server listens on port 80.
-To change this, edit the port number on line 17 of the api/noteServer.js file.
+To change this, edit the port number on line 19 of the api/noteServer.js file.
 
 ###Run the server:
 node api/noteServer.js

@@ -48,7 +48,11 @@
     var idLast = notes[notes.length - 1].id; /** id to used to create the next note */
 
     // Create the note server
-    var server = restify.createServer({name: "Bill Gray's Note Server"});
+    var server = restify.createServer({name: "Bill Gray's Note Server",  formatters: {
+            'application/json': function(req, res, body, cb) {
+                return cb(null, JSON.stringify(body, null, '\t'));
+            }
+        }});
 
     // Load the restify plugins
     server.use(restify.queryParser());
