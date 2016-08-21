@@ -145,6 +145,7 @@
             ret = {"id": idLast, "body": body};
             notes.push(ret);
             saveNotes();
+            res.statusCode = 201; // Created
         }
         catch (e) {
             res.statusCode = 400;
