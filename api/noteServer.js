@@ -16,10 +16,10 @@
  * note server
  */
 (function () {
-    var PORT = 80;                      /** Port to listen on */
-    var restify = require('restify');   /** Load the restify framework */
-    var fs = require('fs');             /** The file system */
-    var notesFile = "notes.json";       /** The file to save the notes in */
+    var PORT      = 80; // Port to listen on
+    var restify   = require('restify'); // Load the restify framework
+    var fs        = require('fs'); // The file system
+    var notesFile = "notes.json"; // The file to save the notes in
 
     /**
      * note data
@@ -27,7 +27,7 @@
      * Some default data.
      * If the notes.json file exists, this data will be over written by the data in the file.
      */
-    var notes = [
+    var notes  = [
         {
             "id"  : 1,
             "body": "This is note # 1"
@@ -45,22 +45,25 @@
             "body": "Note # 4 with milk as well"
         }
     ];
-    var idLast = notes[notes.length - 1].id; /** id to used to create the next note */
+    var idLast = notes[notes.length - 1].id;
+    /** id to used to create the next note */
 
-    // Create the note server
-    var server = restify.createServer({name: "Bill Gray's Note Server",  formatters: {
-            'application/json': function(req, res, body, cb) {
-                var ret;
-                try {
-                    ret = cb(null, JSON.stringify(body, null, '\t'));
-                } catch(e) {
-                    res.statusCode = 400;
-                    ret = badRequest(body);
+        // Create the note server
+    var server = restify.createServer({
+            name: "Bill Gray's Note Server", formatters: {
+                'application/json': function (req, res, body, cb) {
+                    var ret;
+                    try {
+                        ret = cb(null, JSON.stringify(body, null, '\t'));
+                    } catch (e) {
+                        res.statusCode = 400;
+                        ret            = badRequest(body);
+                    }
+                    console.log(ret);
+                    return ret;
                 }
-                console.log(ret);
-                return ret;
             }
-        }});
+        });
 
     // Load the restify plugins
     server.use(restify.queryParser());
@@ -83,7 +86,7 @@
      * @returns  The requested note or 404
      */
     server.get('/api/notes', function (req, res, next) {
-        var ret = [];
+        var ret   = [];
         var query = req.query.query;
 
         notes.forEach(function (note) {
@@ -169,14 +172,14 @@
     var badRequest = function (body) {
         var retJson = {
             "jse_shortmsg": "Invalid Data",
-            "jse_info": {},
-            "message": "Body contained invalid Data",
-            "statusCode": 400,
-            "body": {
-                "code": "BadRequest",
-                "message": "data invalid Body = "+body
+            "jse_info"    : {},
+            "message"     : "Body contained invalid Data",
+            "statusCode"  : 400,
+            "body"        : {
+                "code"   : "BadRequest",
+                "message": "data invalid Body = " + body
             },
-            "restCode": "BadRequest"
+            "restCode"    : "BadRequest"
         };
         return retJson;
     };
@@ -192,14 +195,14 @@
 
         var retJson = {
             "jse_shortmsg": "Note not found",
-            "jse_info": {},
-            "message": "Requested note was not found",
-            "statusCode": 404,
-            "body": {
-                "code": "NotFound",
+            "jse_info"    : {},
+            "message"     : "Requested note was not found",
+            "statusCode"  : 404,
+            "body"        : {
+                "code"   : "NotFound",
                 "message": "Note was not found!"
             },
-            "restCode": "NotFound"
+            "restCode"    : "NotFound"
         };
 
         return retJson; //"Note NOT found";

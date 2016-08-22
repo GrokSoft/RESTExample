@@ -10,8 +10,8 @@
 
     app.controller('NgIssuesController', ['$scope', '$http', function ($scope, $http) {
         var ngIssues = this;
-        var showing = true;    // State for toggle all
-        var date = new Date();
+        var showing  = true;    // State for toggle all
+        var date     = new Date();
         date.setDate(date.getDate() - 7);
         var service = "https://api.github.com/repos/angular/angular.js/issues?since=" + date.toISOString() + "&assignee=*";
         this.issues = [];
@@ -35,7 +35,7 @@
          *  Toggle all the collapse elements
          */
         this.toggleAllCollapse = function () {
-            var chevron = $('#chevron');
+            var chevron      = $('#chevron');
             var allCollapsed = $('[data-toggle="collapse"]');
             if (showing) {
                 allCollapsed.collapse('hide');
@@ -51,8 +51,8 @@
             showing = !showing;
 
             // Stop the finger
-/*            $('#finger2').removeClass('bounce-right');
-            $('#finger2').addClass('hidden');*/
+            /*            $('#finger2').removeClass('bounce-right');
+             $('#finger2').addClass('hidden');*/
         };
 
         this.toggleSingleRow = function () {
@@ -71,7 +71,7 @@
     }]);
 
     app.controller('IssueController', ['$scope', function ($scope) {
-        var ctrl = this;
+        var ctrl         = this;
         var issue;
         var allCollapsed = $('[data-toggle="collapse"]');
 
