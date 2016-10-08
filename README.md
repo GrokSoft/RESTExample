@@ -40,6 +40,8 @@ curl -i -H "Accept: application/json" -X POST -d '{"body" : "Pick up milk!"}' ht
 
 ###Run the Web App
 Load the web/index.html with a browser
+
+See the web app here: [http://www.groksoft.net/portfolio/github/RESTExample/web/](http://www.groksoft.net/portfolio/github/RESTExample/web/)
    
 
 
