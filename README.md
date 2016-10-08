@@ -1,5 +1,5 @@
 
-#Bill Gray's Back-End & Front-End REST Example#
+#Bill Gray's Back-End & Front-End REST Example
 
 ##Back-End RESTful Note Server.
 
@@ -10,21 +10,21 @@
 
 ###Configuration:
 By default the note server listens on port 80.
-To change this, edit the port number on line 19 of the api/noteServer.js file.
+To change this, edit the port number on line 19 of the `api/noteServer.js` file.
 
 ###Run the server:
-node api/noteServer.js
+`node api/noteServer.js`
 
 ###Some Tests using curl:
-curl -i -H "Accept: application/json" -X GET http://localhost/api/notes
+`curl -i -H "Accept: application/json" -X GET http://localhost/api/notes`
 
-curl -i -H "Accept: application/json" -X GET http://localhost/api/notes?query=milk
+`curl -i -H "Accept: application/json" -X GET http://localhost/api/notes?query=milk`
 
-curl -i -H "Accept: application/json" -X GET http://localhost/api/notes/2
+`curl -i -H "Accept: application/json" -X GET http://localhost/api/notes/2`
 
-curl -i -H "Accept: application/json" -X GET http://localhost/api/notes/99 (Returns a 404)
+`curl -i -H "Accept: application/json" -X GET http://localhost/api/notes/99 (Returns a 404)`
 
-curl -i -H "Accept: application/json" -X POST -d '{"body" : "Pick up milk!"}' http://localhost/api/notes
+`curl -i -H "Accept: application/json" -X POST -d '{"body" : "Pick up milk!"}' http://localhost/api/notes`
 
 
 ##Front-End Angular GitHub Issues Web page
