@@ -1,6 +1,8 @@
 
 #Bill Gray's Back-End & Front-End REST Example
 
+_Note: The Back-End & Front-End do not work together, they are separate apps._
+
 ##Back-End RESTful Note Server.
 
 - This REST server was created using node.js and restify. You will need node.js installed to run the server. You can download it here: https://nodejs.org
