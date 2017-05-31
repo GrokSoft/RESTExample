@@ -1,23 +1,23 @@
 
-#Bill Gray's Back-End & Front-End REST Example
+# Bill Gray's Back-End & Front-End REST Example
 
 _Note: The Back-End & Front-End do not work together, they are separate apps._
 
-##Back-End RESTful Note Server.
+## Back-End RESTful Note Server.
 
 - This REST server was created using node.js and restify. You will need node.js installed to run the server. You can download it here: https://nodejs.org
 - The server comes with 4 notes in its data already. 2 of the notes have the word milk in them for testing the query. See the curl commands below for testing.
 - Blank notes are not allowed to be added, there must be a body with the note. If no body is found a 400 (Bad Request) error will be returned.
 - The server is located at /api
 
-###Configuration:
+### Configuration:
 By default the note server listens on port 80.
 To change this, edit the port number on line 19 of the `api/noteServer.js` file.
 
-###Run the server:
+### Run the server:
 `node api/noteServer.js`
 
-###Some Tests using curl:
+### Some Tests using curl:
 `curl -i -H "Accept: application/json" -X GET http://localhost/api/notes`
 
 `curl -i -H "Accept: application/json" -X GET http://localhost/api/notes?query=milk`
@@ -29,7 +29,7 @@ To change this, edit the port number on line 19 of the `api/noteServer.js` file.
 `curl -i -H "Accept: application/json" -X POST -d '{"body" : "Pick up milk!"}' http://localhost/api/notes`
 
 
-##Front-End Angular GitHub Issues Web page
+## Front-End Angular GitHub Issues Web page
 
 - This web app retrieves the last 7 days of issues from the GitHub Angular Repository.
 - The page is responsive and will auto switch from two to one column of issues when medium or small.
@@ -40,7 +40,7 @@ To change this, edit the port number on line 19 of the `api/noteServer.js` file.
 - Each issue also has a GitHub icon on the right side of the issues header. Click it to go to the GitHub page for that issue.
 - The Web App is located at web/
 
-###Run the Web App
+### Run the Web App
 Load the web/index.html with a browser
 
 See the web app here: [http://www.groksoft.net/portfolio/github/RESTExample/web/](http://www.groksoft.net/portfolio/github/RESTExample/web/)
