@@ -45,5 +45,5 @@ Load the web/index.html with a browser
 
 See the web app here: [http://www.groksoft.net/portfolio/github/RESTExample/web/](http://www.groksoft.net/portfolio/github/RESTExample/web/)
    
-See the requirements used to build both the server and web app here [Requirements.MD](https://github.com/GrokSoft/RESTExample/blob/master/Requirements.MD)
+See the requirements used to build both the server and web app here: [Requirements.MD](https://github.com/GrokSoft/RESTExample/blob/master/Requirements.MD)
 
