@@ -54,7 +54,7 @@
                 'application/json': function (req, res, body, cb) {
                     var ret;
                     try {
-                        ret = cb(null, JSON.stringify(body, null, '\t'));
+                        ret = cb(null, JSON.stringify(body, null, 4));
                     } catch (e) {
                         res.statusCode = 400;
                         ret            = badRequest(body);

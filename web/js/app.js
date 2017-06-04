@@ -13,7 +13,7 @@
         var showing  = true;    // State for toggle all
         var date     = new Date();
         date.setDate(date.getDate() - 7);
-        var service = "https://api.github.com/repos/angular/angular.js/issues?since=" + date.toISOString() + "&assignee=*";
+        var service = "https://api.github.com/repos/angular/angular/issues?since=" + date.toISOString() + "&assignee=*";
         this.issues = [];
 
         // Get the issues
