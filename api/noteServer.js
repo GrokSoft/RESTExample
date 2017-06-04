@@ -16,7 +16,7 @@
  * note server
  */
 (function () {
-    var PORT      = 80; // Port to listen on
+    var PORT      = 8080; // Port to listen on
     var restify   = require('restify'); // Load the restify framework
     var fs        = require('fs'); // The file system
     var notesFile = "notes.json"; // The file to save the notes in
@@ -48,7 +48,7 @@
     var idLast = notes[notes.length - 1].id;
     /** id to used to create the next note */
 
-        // Create the note server
+    // Create the note server
     var server = restify.createServer({
             name: "Bill Gray's Note Server", formatters: {
                 'application/json': function (req, res, body, cb) {
@@ -59,7 +59,8 @@
                         res.statusCode = 400;
                         ret            = badRequest(body);
                     }
-                    console.log(ret);
+                    if( ret != undefined )
+                        console.log(">> "+ret);
                     return ret;
                 }
             }
@@ -214,7 +215,7 @@
     var saveNotes = function () {
         fs.writeFile(notesFile, JSON.stringify(notes), function (err) {
             if (err) {
-                return console.log(err);
+                return console.log("Save error: "+err);
             }
             console.log("The file was saved with %d notes.", notes.length);
         });
@@ -228,7 +229,7 @@
             if (exists) {
                 fs.readFile(notesFile, function (err, data) {
                     if (err) {
-                        return console.log(err);
+                        return console.log("Get Error: "+err);
                     }
                     notes = JSON.parse(data);
 

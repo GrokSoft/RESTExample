@@ -1,5 +1,5 @@
 
-# Bill Gray's Back-End & Front-End REST Example
+# Bill Gray's Back-End & Front-End REST Examples
 
 _Note: The Back-End & Front-End do not work together, they are separate apps._
 
@@ -8,7 +8,7 @@ _Note: The Back-End & Front-End do not work together, they are separate apps._
 - This REST server was created using node.js and restify. You will need node.js installed to run the server. You can download it here: https://nodejs.org
 - The server comes with 4 notes in its data already. 2 of the notes have the word milk in them for testing the query. See the curl commands below for testing.
 - Blank notes are not allowed to be added, there must be a body with the note. If no body is found a 400 (Bad Request) error will be returned.
-- The server is located at /api
+- The server is located at /api in the repository.
 
 ### Configuration:
 By default the note server listens on port 80.
@@ -38,7 +38,7 @@ To change this, edit the port number on line 19 of the `api/noteServer.js` file.
 - There is a button on the left that will toggle the collapsing of all the note's body text, so you can see more titles on the screen at one time.
 - Each issue shows show it's lock status with a green unlocked or red locked icon.
 - Each issue also has a GitHub icon on the right side of the issues header. Click it to go to the GitHub page for that issue.
-- The Web App is located at web/
+- The Web App is located at web/ in the repository.
 
 ### Run the Web App
 Load the web/index.html with a browser
